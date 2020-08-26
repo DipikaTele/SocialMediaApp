@@ -7,3 +7,9 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now=True)
     content = models.TextField()
     image = models.ImageField()
+    
+    def __str__(self):return self.content[:15]
+
+class Friends(models.Model):
+    present1=models.ForeignKey(User,on_delete=models.CASCADE,related_name='present1')
+    present2=models.ForeignKey(User,on_delete=models.CASCADE,related_name='present2')
