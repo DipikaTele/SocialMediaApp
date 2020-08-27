@@ -6,10 +6,10 @@ class Post(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now=True)
     content = models.TextField()
-    image = models.ImageField()
+    image = models.ImageField(blank = True)
     
     def __str__(self):return self.content[:15]
 
 class Friends(models.Model):
-    present1=models.ForeignKey(User,on_delete=models.CASCADE,related_name='present1')
-    present2=models.ForeignKey(User,on_delete=models.CASCADE,related_name='present2')
+    person1=models.ForeignKey(User,on_delete=models.CASCADE,related_name='person1')
+    person2=models.ForeignKey(User,on_delete=models.CASCADE,related_name='person2')
