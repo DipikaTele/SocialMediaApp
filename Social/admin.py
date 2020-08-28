@@ -3,5 +3,7 @@ from Social import models
 # Register your models here.
 admin.site.register([
     models.Friends,
+    models.Comment,
+    models.Like,
     models.Post
 ])

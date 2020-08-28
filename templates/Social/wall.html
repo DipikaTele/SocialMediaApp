@@ -1,8 +1,11 @@
 {% extends 'auth\base.html' %}
 {% block content %}
  {% for post in posts %}
-
-     {{ post }}
+   <li>
+    {{ post }}-{{ post.like_set.count }} likes
+    
+   </li>
+     
 
 
  {% endfor %}
