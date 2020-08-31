@@ -6,10 +6,10 @@ from auth import forms
 # Create your views here.
 class Login(LoginView):
     template_name = 'auth/login.html'
+   
 
 class Logout(LogoutView):
     pass
-
 
 class Signup(View):
     def get(self, request):
@@ -23,7 +23,7 @@ class Signup(View):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('/')
+            return redirect('/home')
 
         context = {
             "form" : form
